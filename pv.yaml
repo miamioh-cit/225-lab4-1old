@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: mongo-volume
+  name: mongo-pv
   labels:
     type: nfs
 spec:
@@ -12,8 +12,8 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    path: "/roseaw"
-    server: 10.48.228.21
+    path: /srv/nfs/roseaw
+    server: 10.48.10.140
     readOnly: false
 ---
 apiVersion: v1
